@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 
 gem "haml-rails", "~> 2.0"
+gem 'semantic-ui-sass'
+gem 'jquery-rails'
 
 
 group :development, :test do
