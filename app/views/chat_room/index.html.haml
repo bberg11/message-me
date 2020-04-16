@@ -1,1 +1,38 @@
-%h1= @title 
+%h1.ui.center.aligned.medium.icon.header
+  %i.circular.comments.icon
+  Say Something
+
+.ui.two.column.grid
+  .twelve.wide.column
+    .ui.card.fluid.raised.chatbox
+      .content
+        .ui.small.feed
+          .event
+            .content
+              .summary
+                %em Elliot Fu:
+                Message
+          .event
+            .content
+              .summary
+                %em Elliot Fu:
+                Message
+      .extra.content
+        %form.ui.reply.form
+          .field
+            .ui.fluid.action.input
+              %input{ placeholder: 'Enter message', type: 'text' }
+              .ui.blue.labeled.submit.icon.button
+                %i.icon.edit
+                Add Reply
+
+  .four.wide.column
+    .ui.card.fluid.raised.chatbox
+      .content
+        .ui.inverted.vertical.menu
+          %a.active.item
+            Home
+          %a.item
+            Messages
+          %a.item
+            Friends
