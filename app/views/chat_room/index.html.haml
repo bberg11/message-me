@@ -6,18 +6,13 @@
   .twelve.wide.column
     .ui.card.fluid.raised.chatbox
       .content
-        .ui.small.feed
-          - @messages.each do |message|
-            .event
-              .content
-                .summary
-                  %em #{message.user.display_name}:
-                  = message.body
+        .ui.small.feed{ data: { messages: '' } }
+          = render @messages
       .extra.content
-        = form_with url: message_path, local: true, class: 'ui reply form' do |form|
+        = form_with url: message_path, class: 'ui reply form' do |form|
           .field
             .ui.fluid.action.input
-              = form.text_field :body, placeholder: 'Enter Message'
+              = form.text_field :body, placeholder: 'Enter Message', data: { message_input: '' }
               = button_tag type: 'submit', class: 'ui blue labeled submit icon button' do
                 %i.icon.edit
                 Add Reply

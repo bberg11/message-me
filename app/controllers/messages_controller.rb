@@ -4,16 +4,18 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.build(message_params)
 
-    if !message.save
-      flash[:error] = "There was a problem saving your message"
+    if message.save
+      ActionCable.server.broadcast "chat_room_channel", html: message_html(message)
     end
-
-    redirect_to root_path
   end
 
   private
 
   def message_params
     params.permit(:body)
+  end
+
+  def message_html(message)
+    render(partial: "message", locals: { message: message })
   end
 end
