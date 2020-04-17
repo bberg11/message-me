@@ -19,11 +19,20 @@
               Account
               %i.dropdown.icon
               .menu
-                = link_to 'Logout', '#', class: 'item'
-                = link_to 'Login', '#', class: 'item'
-                = link_to 'Sign Up', '#', class: 'item'
-            .item
-              .ui.primary.button Sign Up
+                - if logged_in?
+                  = link_to 'Logout', logout_path, method: :delete, class: 'item'
+                - else
+                  = link_to 'Login', login_path, class: 'item'
+            - unless logged_in?
+              .item
+                .ui.primary.button Sign Up
+
+    .ui.container
+      - flash.each do |type, message|
+        %div.ui.message{ class: type }
+          %i.close.icon
+          .header= type.titleize
+          %p= message
 
     .ui.container
       = yield

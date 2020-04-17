@@ -5,18 +5,18 @@
 .ui.placeholder.segment
   .ui.two.column.very.relaxed.stackable.grid
     .column
-      .ui.form
+      = form_with url: login_path, local: true, class: 'ui form' do |form|
         .field
-          %label Username
+          = form.label :email
           .ui.left.icon.input
-            %input{ placeholder: 'Username', type: 'text' }
-            %i.user.icon
+            = form.text_field :email, placeholder: 'Email Address', required: true
+            %i.at.icon
         .field
-          %label Password
+          = form.label :password
           .ui.left.icon.input
-            %input{ placeholder: 'Password', type: 'password' }
+            = form.password_field :password, placeholder: 'Password', required: true
             %i.lock.icon
-        .ui.blue.submit.button Login
+        = form.submit 'Login', class: 'ui fluid blue submit button'
     .middle.aligned.column
       .ui.blue.submit.button
         %i.signup.icon
