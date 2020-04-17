@@ -9,20 +9,21 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .ui.tiny.menu.inverted.attached
-      .ui.container
-        = link_to 'Chat Room', root_path, class: 'item'
-        = link_to 'Messages', '#', class: 'item'
-        .right.menu
-          .ui.dropdown.item
-            Account
-            %i.dropdown.icon
-            .menu
-              = link_to 'Logout', '#', class: 'item'
-              = link_to 'Login', '#', class: 'item'
-              = link_to 'Sign Up', '#', class: 'item'
-          .item
-            .ui.primary.button Sign Up
+    .header
+      .ui.tiny.menu.inverted.attached
+        .ui.container
+          = link_to 'Chat Room', root_path, class: 'item'
+          = link_to 'Messages', '#', class: 'item'
+          .right.menu
+            .ui.dropdown.item
+              Account
+              %i.dropdown.icon
+              .menu
+                = link_to 'Logout', '#', class: 'item'
+                = link_to 'Login', '#', class: 'item'
+                = link_to 'Sign Up', '#', class: 'item'
+            .item
+              .ui.primary.button Sign Up
 
     .ui.container
       = yield
