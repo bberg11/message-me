@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get "login", to: "logins#new"
   post "login", to: "logins#create"
   delete "logout", to: "logins#destroy"
+
+  get "signup", to: "users#new"
+  resources :users, except: [:destroy, :index, :new]
 end

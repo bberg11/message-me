@@ -18,7 +18,7 @@
             %i.lock.icon
         = form.submit 'Login', class: 'ui fluid blue submit button'
     .middle.aligned.column
-      .ui.blue.submit.button
+      = link_to signup_path, class: 'ui blue submit button' do
         %i.signup.icon
         Sign Up
   .ui.vertical.divider
