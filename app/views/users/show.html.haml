@@ -1,3 +1,11 @@
 %h1.ui.center.aligned.medium.icon.header
   %i.circular.user.icon
   = @user.display_name
+  - if current_user == @user
+    = link_to 'edit', edit_user_path(@user)
+
+.ui.two.column.centered.grid
+  .column
+    .ui.small.feed
+      %h4.ui.header Message History
+      = render @messages

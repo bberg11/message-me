@@ -2,25 +2,4 @@
   %i.circular.user.icon
   Sign Up
 
-.ui.two.column.centered.grid
-  .column
-    = form_with model: @user, local: true, class: 'ui form' do |form|
-      .field
-        = form.label :display_name
-        .ui.left.icon.input
-          = form.text_field :display_name, placeholder: 'Display Name', required: true
-          %i.user.icon
-      .field
-        = form.label :email
-        .ui.left.icon.input
-          = form.text_field :email, placeholder: 'Email Address', required: true
-          %i.at.icon
-      .field
-        = form.label :password
-        .ui.left.icon.input
-          = form.password_field :password, placeholder: 'Password', required: true
-          %i.lock.icon
-      = form.submit 'Sign Up', class: 'ui fluid blue submit button'
-
-
-
+= render 'form'
