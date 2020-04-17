@@ -10,6 +10,7 @@ App.chat_room = App.cable.subscriptions.create("ChatRoomChannel", {
   received(data) {
     $('[data-messages]').append(data.html);
     $('[data-message-input]').val('');
+    scroll_bottom();
   }
 });
     
