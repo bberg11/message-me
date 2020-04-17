@@ -7,16 +7,12 @@
     .ui.card.fluid.raised.chatbox
       .content
         .ui.small.feed
-          .event
-            .content
-              .summary
-                %em Elliot Fu:
-                Message
-          .event
-            .content
-              .summary
-                %em Elliot Fu:
-                Message
+          - @messages.each do |message|
+            .event
+              .content
+                .summary
+                  %em #{message.user.email}:
+                  = message.body
       .extra.content
         %form.ui.reply.form
           .field

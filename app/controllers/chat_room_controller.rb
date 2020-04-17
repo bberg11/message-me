@@ -1,5 +1,5 @@
 class ChatRoomController < ApplicationController
   def index
-    @title = 'Chat Room'
+    @messages = Message.all
   end
 end
