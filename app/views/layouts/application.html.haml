@@ -29,7 +29,7 @@
 
     .ui.container
       - flash.each do |type, message|
-        %div.ui.message{ class: type }
+        %div.ui.message.transition{ class: type }
           %i.close.icon
           .header= type.titleize
           %p= message
