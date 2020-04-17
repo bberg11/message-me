@@ -5,7 +5,11 @@ def random_user_id
 end
 
 5.times do |index|
-  User.create(email: "user_#{index}@gmail.com", password: "password")
+  User.create(
+    display_name: Faker::Name.name,
+    email: "user_#{index + 1}@gmail.com",
+    password: "password",
+  )
 end
 
 5.times do
