@@ -14,11 +14,11 @@
                   %em #{message.user.display_name}:
                   = message.body
       .extra.content
-        %form.ui.reply.form
+        = form_with url: message_path, local: true, class: 'ui reply form' do |form|
           .field
             .ui.fluid.action.input
-              %input{ placeholder: 'Enter message', type: 'text' }
-              .ui.blue.labeled.submit.icon.button
+              = form.text_field :body, placeholder: 'Enter Message'
+              = button_tag type: 'submit', class: 'ui blue labeled submit icon button' do
                 %i.icon.edit
                 Add Reply
 

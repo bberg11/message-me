@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get "signup", to: "users#new"
   resources :users, except: [:destroy, :index, :new]
+
+  post "message", to: "messages#create"
 end
